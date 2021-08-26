@@ -57,7 +57,7 @@ function generatePassword() {
     alert("We need at least one option to be chosen.");
     return "";
   }
-    var actualPassword = getRandom (length);
+    var actualPassword = getRandom (str);
   // generate the password based off the criteria
 
   // `return` that password
