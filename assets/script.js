@@ -11,11 +11,16 @@ var special = "!@#$%^&*()_+";
 function getRandom(str) {
   // What is going on here?
   // this will create a random grouping of the objects from the previous strings created ex. 0 x length
-  var randomIndex = Math.floor(Math.random() * str.length);
-  // and here?
-  //this is the output ex.Dfas%hs1
-  return str[randomIndex];
+  var result           = '';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var charactersLength = characters.length;
+  for ( var i = 0; i < str; i++ ) {
+    result += characters.charAt(Math.floor(Math.random() *
+charactersLength));
+ }
+ return result;
 }
+
 
 // Write password to the #password input
 function writePassword() {
@@ -42,6 +47,7 @@ function generatePassword() {
     // exit the function early, (use the return keyword)
     return "";
   }
+  
 
   // What are we doing here?
   //We are creating question outputs for the user to chose what characteristics they would like for their password
@@ -57,13 +63,15 @@ function generatePassword() {
     alert("We need at least one option to be chosen.");
     return "";
   }
-
+    var actualPassword = getRandom (length);
   // generate the password based off the criteria
 
   // `return` that password
-  return password;
+  return actualPassword;
 }
-alert(generatePassword());
+
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", writePassword); 
+
+
