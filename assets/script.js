@@ -1,18 +1,12 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Why do we have these strings here?
-// We have these strings here because we need the variable objects to pull from based on the users' preference for their password
-var lowercase = "abcdefghijklmnopqrstuvwxyz";
-var uppercase = lowercase.toUpperCase();
-var numeric = "0123456789";
-var special = "!@#$%^&*()_+";
 
 function getRandom(str) {
   // What is going on here?
   // this will create a random grouping of the objects from the previous strings created ex. 0 x length
   var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
   var charactersLength = characters.length;
   for ( var i = 0; i < str; i++ ) {
     result += characters.charAt(Math.floor(Math.random() *
