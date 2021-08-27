@@ -1,18 +1,16 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-
+var Numeric = "0123456789";
+var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercase = "abcdefghijklmnopqrstuvwxyz";
+var Special = "!@#$%^&*";
 
 function getRandom(str) {
   // What is going on here?
   // this will create a random grouping of the objects from the previous strings created ex. 0 x length
-  var result           = '';
-  var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+';
-  var charactersLength = characters.length;
-  for ( var i = 0; i < str; i++ ) {
-    result += characters.charAt(Math.floor(Math.random() *
-charactersLength));
- }
- return result;
+  var randomIndex = Math.floor(Math.random() * str.length);
+  // and here?
+  return str[randomIndex];
 }
 
 
@@ -50,6 +48,18 @@ function generatePassword() {
   var useNumeric = confirm("Would you like to use numeric characters?");
   var useSpecial = confirm("Would you like to use special characters?");
   
+  if (useLowercase == true){
+    getRandom(lowercase);
+ }
+ if (useUppercase == true){
+   getRandom(uppercase);
+ }
+ if (useNumeric == true){
+   getRandom(Numeric);
+ }
+ if (useSpecial == true){
+   getRandom(Special);
+ }
 
   // Why is this if statement necessary?
   //This is necessary because it is alerting the user that this code can not create a password if no variables are being chosen
@@ -57,11 +67,9 @@ function generatePassword() {
     alert("We need at least one option to be chosen.");
     return "";
   }
-    var actualPassword = getRandom (str);
   // generate the password based off the criteria
-
   // `return` that password
-  return actualPassword;
+  return password;
 }
 
 
