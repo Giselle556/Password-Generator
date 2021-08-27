@@ -13,6 +13,5 @@ With this password generator you will be able to gain a password based on the us
 
 # Contact
 Password Generator can be found at 
-
 For any questions pertaining to this code you can contact me at the email below!
 giselleesmeborbolla@gmail.com
