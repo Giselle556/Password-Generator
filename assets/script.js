@@ -5,6 +5,8 @@ var uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var lowercase = "abcdefghijklmnopqrstuvwxyz";
 var Special = "!@#$%^&*";
 
+
+
 function getRandom(str) {
   // What is going on here?
   // this will create a random grouping of the objects from the previous strings created ex. 0 x length
@@ -47,19 +49,23 @@ function generatePassword() {
   var useUppercase = confirm("Would you like to use upper case characters?");
   var useNumeric = confirm("Would you like to use numeric characters?");
   var useSpecial = confirm("Would you like to use special characters?");
+
+  var password2 = ""
   
-  if (useLowercase == true){
-    getRandom(lowercase);
- }
- if (useUppercase == true){
-   getRandom(uppercase);
- }
- if (useNumeric == true){
-   getRandom(Numeric);
- }
- if (useSpecial == true){
-   getRandom(Special);
- }
+  for (let i = 0 ; i < length; i++) {
+     if (useLowercase == true){
+    password2 += getRandom(lowercase);
+   }
+    if (useUppercase == true){
+  password2 += getRandom(uppercase);
+  }
+    if (useNumeric == true){
+  password2 += getRandom(Numeric);
+  }
+     if (useSpecial == true){
+   password2 += getRandom(Special);
+  }
+}
 
   // Why is this if statement necessary?
   //This is necessary because it is alerting the user that this code can not create a password if no variables are being chosen
@@ -67,9 +73,10 @@ function generatePassword() {
     alert("We need at least one option to be chosen.");
     return "";
   }
+  
   // generate the password based off the criteria
   // `return` that password
-  return password;
+  return password2.substr(0,length);
 }
 
 
